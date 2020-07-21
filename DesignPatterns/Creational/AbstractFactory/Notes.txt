@@ -1,0 +1,28 @@
+﻿The abstract factory pattern solves the problem of creating families of related products. 
+For instance, F-16 needs an engine, a cockpit, and wings. 
+The Boeing-747 would require the same set of parts but they would be specific 
+to Boeing. Any airplane would require these three related parts but the parts will be 
+plane and vendor specific. Can you see a pattern emerge here? 
+We need a framework for creating the related parts for each airplane, 
+a family of parts for the F-16, a family of parts for the Boeing-747 so on and so forth.
+
+Formally, the abstract factory pattern is defined as defining an interface to 
+create families of related or dependent objects without specifying their concrete classes.
+
+
+The abstract factory is particularly useful for frameworks and toolkits 
+that work on different operating systems. For instance, 
+if your library provides fancy widgets for the UI, then you 
+may need a family of products that work on MacOS and a similar family 
+of products that work on Windows. Similarly, themes used in IDE can be another example. 
+If your IDE supports light and dark themes then it may use the abstract factory pattern 
+to create widgets that belong to the light or dark theme just by varying the concrete factory
+that creates the widgets.
+
+It might appear to the naive reader that the factory method pattern and
+the abstract factory pattern are similar. The difference between the two lies in 
+their motivations. The factory method pattern is usually responsible for creating 
+a single product whereas an abstract factory pattern creates entire families of related 
+products. Furthermore, in the factory method pattern, we use inheritance to create more 
+specialized products whereas, in an abstract factory pattern, we practice object composition
+by passing in factories that are consumed to create the desired products.

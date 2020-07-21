@@ -1,0 +1,21 @@
+﻿The adapter pattern is defined as allowing incompatible classes to work 
+together by converting the interface of one class into another expected by the clients.
+
+The hot air balloon example that we just discussed is really an object adapter example. 
+We composed the adapter with the adaptee object to make incompatible classes work together.
+
+Using objects for adaptation gains us the usual benefits of object composition, 
+The design becomes flexible and the adapter can stand in place of the adaptee 
+or any of its subclassed-objects.
+
+
+The complementary concept to object adapter is the class adapter. 
+The class adapter works via multiple inheritance which isn't supported in Java. 
+However, the idea is that the adapter extends both, the interface in use by the client, 
+as well as, the adaptee class. Adaptation works via inheritance instead of composition.
+One benefit of the adaptation via inheritance is that behavior can be overridden or 
+new functionality can be added in the adapter
+
+Another example - 
+If you have two applications, one spits out output as XML and the other takes in input as JSON 
+then you'll need an adapter between the two to make them work seamlessly.

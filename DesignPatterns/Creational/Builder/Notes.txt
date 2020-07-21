@@ -1,0 +1,9 @@
+﻿A builder pattern encapsulates or hides the process of building a complex object and 
+separates the representation of the object and its construction. The separation allows us 
+to construct different representations using the same construction process. Different representations 
+implies creating objects of different classes that may share the same construction process.
+
+
+The builder pattern might seem similar to the abstract factory pattern but one difference 
+is that the builder pattern creates an object step by step whereas 
+the abstract factory pattern returns the object in one go.
