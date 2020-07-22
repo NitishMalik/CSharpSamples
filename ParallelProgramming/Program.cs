@@ -45,11 +45,17 @@ namespace ParallelProgramming
             //dic.PrintRecords();
 
             // --Usage of Blocking Collection class --
-            BlockingColl bc = new BlockingColl();
-            bc.StartProcess();
+            //BlockingColl bc = new BlockingColl();
+            //bc.StartProcess();
 
-            Console.ReadLine();
-            bc.CancelTask();
+            //Console.ReadLine();
+            //bc.CancelTask();
+            //Console.ReadLine();
+
+            //-- Usage of Parallel Loops
+            Loops loops = new Loops();
+            loops.ParalleLoopMethod();
+
             Console.ReadLine();
 
         }
