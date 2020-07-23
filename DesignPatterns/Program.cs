@@ -49,9 +49,14 @@ namespace DesignPatterns
             //---------- Structural ----------------
 
             //// ---- 1. Adapter Pattern -------
-            HotAirBallon balloon = new HotAirBallon();            
-            IAircraftType aircraft = new Adapter(balloon);
-            aircraft.Fly();
+            //HotAirBallon balloon = new HotAirBallon();            
+            //IAircraftType aircraft = new Adapter(balloon);
+            //aircraft.Fly();
+
+            //// --- 2. Bridge Pattern            
+            AbstractCorolla toyota = new CorollaModelL(new CorollaImpAsia());
+            toyota.IsRighthanded();
+            toyota.ListSafetyMeasures();
 
             Console.ReadLine();
         }
