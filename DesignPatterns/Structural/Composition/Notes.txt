@@ -1,0 +1,43 @@
+﻿Composite literally means made up of various elements or parts. 
+The pattern allows you to treat the whole and the individual parts as one. 
+The closest analogy you can imagine is a tree. The tree is a recursive data-structure 
+where each part itself is a sub-tree except for the leaf nodes. 
+The root is the top-level composite and its children are either composites 
+themselves or just leaf nodes. The leaf itself can be thought of as a tree with 
+just a single node.
+
+Formally, the composite pattern is defined as composing objects into tree 
+structures to represent part-whole hierarchies, thus letting clients uniformly 
+treat individual objects and composition of objects.
+
+The pattern allows the clients to ignore the differences between the whole 
+and the part.
+
+
+The composite pattern allows a client to work seamlessly with a composite object. 
+The client doesn't need to distinguish between the composite and the part. 
+To make this happen, the composite, as well as, the part needs to implement a 
+common interface or inherit from a common abstract class. This will let the 
+client invoke common methods on both. However, it is possible that the common 
+super-type has methods which make sense for the part and not for the composite or 
+vice versa. Say our interface IAlliancePart could have a method fire() which would 
+be applicable to the part, i.e. the plane but not to the composite, i.e. the air force.
+In such a scenario, it is ok to put in a default implementation or 
+throw an UnSupportedOperationException.
+
+
+Imagine a UI Menu widget which can have sub-menus and menu items that perform some 
+action when clicked on by the user. The menus would form the composite 
+while the menu-items would form the part.
+
+
+Caveats
+--------
+references to parents: Since the composite is a tree structure, one may 
+or may not need to store references to the parent.
+
+ordering of children in a composite: In some scenarios, it might be 
+required to store or traverse the children in a certain order within the composite.
+
+cacheing part of the composite for traversal: For complex composites, it may make 
+sense to cache part of the composite object to speed up traversal or search.

@@ -54,9 +54,17 @@ namespace DesignPatterns
             //aircraft.Fly();
 
             //// --- 2. Bridge Pattern            
-            AbstractCorolla toyota = new CorollaModelL(new CorollaImpAsia());
-            toyota.IsRighthanded();
-            toyota.ListSafetyMeasures();
+            //AbstractCorolla toyota = new CorollaModelL(new CorollaImpAsia());
+            //toyota.IsRighthanded();
+            //toyota.ListSafetyMeasures();
+
+            //// --- 3. Composition Pattern
+            AirForce airForce = new AirForce();
+            airForce.Add(new IndianAirForce());
+            airForce.Add(new F16Aircraft());
+            airForce.Add(new MIGAircraft());
+
+            airForce.getNumbOfPeopleRequired();
 
             Console.ReadLine();
         }
