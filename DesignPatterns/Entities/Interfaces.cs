@@ -11,7 +11,12 @@ namespace DesignPatterns
         void Service();
         void Maintian();
         IAircraftType clone();
-        void setEngine(Engine engine);
+        void setEngine(Engine engine);        
+    }
+
+    public interface IAircraftTypeEx : IAircraftType
+    {
+        double Weight { get; set; }       
     }
 
     public interface IEngine

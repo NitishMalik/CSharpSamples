@@ -59,12 +59,16 @@ namespace DesignPatterns
             //toyota.ListSafetyMeasures();
 
             //// --- 3. Composition Pattern
-            AirForce airForce = new AirForce();
-            airForce.Add(new IndianAirForce());
-            airForce.Add(new F16Aircraft());
-            airForce.Add(new MIGAircraft());
+            //AirForce airForce = new AirForce();
+            //airForce.Add(new IndianAirForce());
+            //airForce.Add(new F16Aircraft());
+            //airForce.Add(new MIGAircraft());
 
-            airForce.getNumbOfPeopleRequired();
+            //airForce.getNumbOfPeopleRequired();
+
+            //// --- 4. Decorator Pattern
+            IAircraftTypeEx luxury = new LuxuryBoeing(new BoeingAbstract());
+            Console.WriteLine($"Weight of luxury boeing is { luxury.Weight}");
 
             Console.ReadLine();
         }

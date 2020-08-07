@@ -1,0 +1,34 @@
+﻿A decoration is added to something to make it more attractive, in the same spirit, the decorator 
+pattern adds new functionality to objects without modifying their defining classes.
+
+The decorator pattern can be thought of as a wrapper or more formally a way to enhance or extend the behavior of an object dynamically. The pattern provides an alternative to subclassing when new functionality is desired.
+
+The strategy is to wrap the existing object within a decorator object that usually 
+implements the same interface as the wrapped object. This allows the decorator 
+to invoke the methods on the wrapped object and then add any additional behavior. 
+Usually, the decorator adds behavior to the existing functionality of the wrapped object i.e. 
+the decorator takes action either before or after invoking some method on the wrapped object.
+
+ public void main() {
+        IAircraft simpleBoeing = new Boeing747();
+        IAircraft luxuriousBoeing = new LuxuryFittings(simpleBoeing);
+        IAircraft bulletProofBoeing = new BulletProof(luxuriousBoeing);
+        float netWeight = bulletProofBoeing.getWeight();
+        System.out.println("Final weight of the plane: " + netWeight);
+    }
+
+From the client code, one can observe how the plane's behavior is extended at runtime. 
+Note that the decorator's abstract class implements the same interface as the Boeing747. 
+This is so that the concrete decorator object can stand in place of the Boeing object. 
+From the client code, one can see how we wrap the boeing object in successive decorators 
+and are able to retrieve the net weight.
+
+Caveats
+------------
+One of the issues with the decorator pattern is that we may end up with too many classes 
+as the number of decorators grows. The java.io package suffers from the same issue, 
+as it makes extensive use of the decorator pattern.
+
+Also, if we want to take a specific action based on the concrete type of the plane, 
+we may not be able to do so. Once the concrete object is wrapped inside a decorator 
+the reference to the object is through the abstract type and not the concrete type anymore.
